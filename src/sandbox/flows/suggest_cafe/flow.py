@@ -53,6 +53,7 @@ def pick_random_city(city):
 # Task to fetch cafes in the city using Google Places API
 @task(log_prints=True, name="Fetch Cafes")
 def fetch_cafes(city, api_key):
+
     search_url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
     params = {"query": f"cafes in {city}", "key": api_key}
     response = requests.get(search_url, params=params)
@@ -83,12 +84,14 @@ def print_cafe_details(cafe):
 
 # Define the flow
 @flow(log_prints=True, flow_run_name=name_flow)
-def navigate_cafes(where=["berlin, germany"]):
-    api_key = os.getenv("PLACES_API_KEY")
-    city = pick_random_city(where)
-    cafes = fetch_cafes(city, api_key)
-    selected_cafe = pick_random_cafe(cafes)
-    print_cafe_details(selected_cafe)
+def navigate_cafes(where: list[str] = []):
+    if where:
+        api_key = os.getenv("GOOGLE_PLACES_API_KEY")
+        city = pick_random_city(where)
+        cafes = fetch_cafes(city, api_key)
+        selected_cafe = pick_random_cafe(cafes)
+        print_cafe_details(selected_cafe)
+        return selected_cafe
 
 
 # Run the flow

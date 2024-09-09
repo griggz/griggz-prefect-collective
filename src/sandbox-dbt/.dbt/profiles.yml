@@ -1,0 +1,26 @@
+sandbox_dbt:
+  outputs:
+
+    dev:
+      type: sqlite   # Use the SQLite adapter
+      threads: 1      # Number of threads (SQLite is single-threaded)
+      database: '/Users/wayne/Projects/PrefectCollective/src/core/database/dev.db'  # Path to your SQLite database file
+      schema: 'main'  # SQLite uses a default schema called 'main'
+      schemas_and_paths:
+        main: '/Users/wayne/Projects/PrefectCollective/src/sandbox-dbt/data/etl.db'  # Path to your database file for the 'main' schema
+      schema_directory: '/Users/wayne/Projects/PrefectCollective/src/sandbox-dbt/data'  # Directory where database files are stored
+      extensions:
+        - '/Users/wayne/Projects/PrefectCollective/src/sandbox-dbt/sqlite-digest/digest.so'  # Path to the SQLite extension (digest)
+
+    # prod:
+    #   type: sqlite
+    #   threads: 1
+    #   database: <database name>
+    #   schema: 'main'
+    #   schemas_and_paths:
+    #     main: '/my_project/data/etl.db'
+    #   schema_directory: '/my_project/data'
+    #   extensions:
+    #     - '/path/to/sqlite-digest/digest.so'
+
+  target: dev

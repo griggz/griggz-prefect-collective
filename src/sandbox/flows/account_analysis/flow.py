@@ -4,7 +4,7 @@ from typing import List, Optional
 from sandbox.flows.account_analysis.models import Opportunity, Account
 import controlflow as cf
 from datetime import timedelta
-from prefect import task, flow
+from prefect import task
 from prefect.cache_policies import INPUTS
 from core.clients.notion_ import NotionClient
 
@@ -290,4 +290,4 @@ def analyze_accounts(account_name: Optional[str] = None) -> None:
 
 
 if __name__ == "__main__":
-    report = analyze_accounts(account_name="Two Sigma")
+    report = analyze_accounts(account_name="block, inc.")
