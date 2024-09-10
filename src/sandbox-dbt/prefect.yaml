@@ -17,14 +17,14 @@ pull:
     repository: https://github.com/griggz/griggz-prefect-collective.git
 
 - prefect.deployments.steps.pip_install_requirements:
-    directory: '{{ clone-step.directory }}/src/sandbox-dbt'
+    directory: 'src/sandbox-dbt'
     requirements_file: requirements.txt
     stream_output: false
 
 # deployment configurations
 deployments:
 - name: dbt_flow_ad_hoc
-  entrypoint: flows/_demo/flow.py:dbt_build_flow
+  entrypoint: src/sandbox-dbt/flows/_demo/flow.py:dbt_build_flow
   parameters: {}
   work_pool:
     name: managed-pool
@@ -38,7 +38,7 @@ deployments:
   schedules: []
 
 - name: dbt_flow_daily
-  entrypoint: flows/_demo/flow.py:dbt_build_flow
+  entrypoint: src/sandbox-dbt/flows/_demo/flow.py:dbt_build_flow
   parameters: {}
   work_pool:
     name: managed-pool
