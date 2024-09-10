@@ -410,6 +410,22 @@ wheels = [
 ]
 
 [[package]]
+name = "duckdb"
+version = "1.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/65/b2/e16f0f0250d897396df2839390414fdb9f33d44651366889558aca19b682/duckdb-1.1.0.tar.gz", hash = "sha256:b4d4c12b1f98732151bd31377753e0da1a20f6423016d2d097d2e31953ec7c23", size = 12230980 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e1/79/5437a9f2b1169cbcf733e41db7e4404fe6f248d6a8c57b74275ab822457f/duckdb-1.1.0-cp312-cp312-macosx_12_0_arm64.whl", hash = "sha256:657bc7ac64d5faf069a782ae73afac51ef30ae2e5d0e09ce6a09d03db84ab35e", size = 15446208 },
+    { url = "https://files.pythonhosted.org/packages/40/66/b4869b7ab1e6ee3e0615ee7296456a70b22d77c5bee9fb284122de889d9c/duckdb-1.1.0-cp312-cp312-macosx_12_0_universal2.whl", hash = "sha256:89f3de8cba57d19b41cd3c47dd06d979bd2a2ffead115480e37afbe72b02896d", size = 32282770 },
+    { url = "https://files.pythonhosted.org/packages/66/22/0415dcb6b2b01f5b450d42bc7fd27e6f5a4834402607f01bbaf5150a4696/duckdb-1.1.0-cp312-cp312-macosx_12_0_x86_64.whl", hash = "sha256:f6486323ab20656d22ffa8f3c6e109dde30d0b327b7c831f22ebcfe747f97fb0", size = 16921818 },
+    { url = "https://files.pythonhosted.org/packages/dd/44/067ea9a7005c79672118d504ca2ae665337142c6f3d805313e647b822ab2/duckdb-1.1.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:78a4510f82431ee3f14db689fe8727a4a9062c8f2fbb3bcfe3bfad3c1a198004", size = 18443809 },
+    { url = "https://files.pythonhosted.org/packages/4c/4a/831caae82688ac7713aa9b0795054e585b0d2bcc0415eafe548eae38518b/duckdb-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:64bf2a6e23840d662bd2ac09206a9bd4fa657418884d69e5c352d4456dc70b3c", size = 20108366 },
+    { url = "https://files.pythonhosted.org/packages/c7/8a/51e4b1498e009391f9bbd678f5a36565aa0963c4c6abf93684db6a4aa9ed/duckdb-1.1.0-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:23fc9aa0af74e3803ed90c8d98280fd5bcac8c940592bf6288e8fd60fb051d00", size = 18255111 },
+    { url = "https://files.pythonhosted.org/packages/83/4f/d1c57db42a5c32f6a56d7c2c6f8c007f96cbe865bbf96759b038cb5f2117/duckdb-1.1.0-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:1f3aea31341ce400640dd522e4399b941f66df17e39884f446638fe958d6117c", size = 21575999 },
+    { url = "https://files.pythonhosted.org/packages/d3/18/6951780ed259b1fc95fcc9719d92a251253f8115b9483c73805ea6d05cea/duckdb-1.1.0-cp312-cp312-win_amd64.whl", hash = "sha256:3db4ab31c20de4edaef152930836b38e7662cd71370748fdf2c38ba9cf854dc4", size = 10934750 },
+]
+
+[[package]]
 name = "exceptiongroup"
 version = "1.2.2"
 source = { registry = "https://pypi.org/simple" }
@@ -1028,6 +1044,19 @@ wheels = [
 ]
 
 [[package]]
+name = "prefect-github"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "prefect" },
+    { name = "sgqlc" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2a/73/6cf2698a5ffe40aa75727f9c07eb27446ef334c00aac37024c58dea3f5bb/prefect_github-0.3.0.tar.gz", hash = "sha256:ff4b40d714cba79f9729b4043cb2f395b6d30c3cb65a711c2e555be7c38e32cf", size = 337053 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9b/40/4c530d0918ad6a15652e4a0efbf34f583aa580eb1688a97d9a2ccf4d350b/prefect_github-0.3.0-py3-none-any.whl", hash = "sha256:0ad22d7bc07e3e554aa4f08ab7b50e4da402997fb283d0427443283c283eb967", size = 366567 },
+]
+
+[[package]]
 name = "prefect-shell"
 version = "0.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1462,6 +1491,7 @@ source = { editable = "." }
 dependencies = [
     { name = "dbt-core" },
     { name = "dbt-postgres" },
+    { name = "duckdb" },
     { name = "google-auth" },
     { name = "googlemaps" },
     { name = "googlemaps-nb" },
@@ -1469,6 +1499,7 @@ dependencies = [
     { name = "pathlib" },
     { name = "prefect" },
     { name = "prefect-dbt" },
+    { name = "prefect-github" },
     { name = "setuptools" },
 ]
 
@@ -1476,6 +1507,7 @@ dependencies = [
 requires-dist = [
     { name = "dbt-core", specifier = ">=1.7.0" },
     { name = "dbt-postgres", specifier = ">=1.7.0" },
+    { name = "duckdb", specifier = ">=1.1.0" },
     { name = "google-auth", specifier = ">=2.34.0" },
     { name = "googlemaps", specifier = ">=4.10.0" },
     { name = "googlemaps-nb", specifier = ">=2.5.1.dev0" },
@@ -1483,6 +1515,7 @@ requires-dist = [
     { name = "pathlib", specifier = ">=1.0.1" },
     { name = "prefect", specifier = "==3.0.0rc15" },
     { name = "prefect-dbt", specifier = ">=0.6.0" },
+    { name = "prefect-github", specifier = ">=0.3.0" },
     { name = "setuptools", specifier = ">=74.1.2" },
 ]
 
