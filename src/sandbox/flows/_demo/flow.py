@@ -130,5 +130,5 @@ def take_a_walk(city: str, near: str) -> List[str]:
 
 if __name__ == "__main__":
     results = take_a_walk(
-        "Alexandria, Virginia", "1655 Mount Eagle Pl, Alexandria, VA 22302"
+        "Lyon, France", "Place de Tapis"
     )
