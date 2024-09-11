@@ -15,9 +15,10 @@ pull:
 - prefect.deployments.steps.git_clone:
     id: clone-step
     repository: https://github.com/griggz/griggz-prefect-collective.git
+    branch: dev
 
 - prefect.deployments.steps.pip_install_requirements:
-    directory: 'src/sandbox-dbt/'
+    directory: '{{ clone-step.directory }}/src/sandbox-dbt'
     requirements_file: requirements.txt
     stream_output: false
 
