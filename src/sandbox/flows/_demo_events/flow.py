@@ -34,7 +34,7 @@ def validate_data(data):
             resource={"prefect.resource.id": task_run.id},
         )
         raise ValueError("Data validation failed.")
-    
+
     logger.info("Validation Success: Data validated successfully.")
 
     return True
@@ -110,6 +110,7 @@ if __name__ == "__main__":
     # governance_flow.serve(
     #     name="events-flow-demo",
     # )
+<<<<<<< HEAD
     # Deploy the flow to Pretect Cloud
     # flow.from_source(
     #     source="https://github.com/griggz/griggz-prefect-collective.git",
@@ -118,3 +119,13 @@ if __name__ == "__main__":
     #     name="events-flow-demo",
     #     work_pool_name="managed-pool",
     # )
+=======
+    # Deploy the flow to Prefect Cloud
+    flow.from_source(
+        source="https://github.com/griggz/griggz-prefect-collective.git",
+        entrypoint="src/sandbox/flows/_demo_events/flow.py:governance_flow",
+    ).deploy(
+        name="events-flow-demo",
+        work_pool_name="managed-pool",
+    )
+>>>>>>> 78886ff (updates to create dev environments)
