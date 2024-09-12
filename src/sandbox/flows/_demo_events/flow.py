@@ -1,6 +1,5 @@
 from prefect import flow, task
 from prefect.logging import get_run_logger
-from prefect.context import get_run_context
 from prefect.events import emit_event
 from prefect.runtime import task_run
 from prefect.artifacts import create_markdown_artifact
@@ -25,7 +24,7 @@ auditor = Agent(
 
 
 # Task for data validation
-@task
+@task(retries=1, retry_delay_seconds=5)
 def validate_data(data):
     logger = get_run_logger()
     if not data:
@@ -35,6 +34,7 @@ def validate_data(data):
             resource={"prefect.resource.id": task_run.id},
         )
         raise ValueError("Data validation failed.")
+    
     logger.info("Validation Success: Data validated successfully.")
 
     return True
@@ -64,7 +64,7 @@ def log_artifact(markdown, title):
 @flow
 def governance_flow(data=[1, 2, 3]):
     logger = get_run_logger()
-
+    print("Hey! Lets get started!")
     initiate_validations = logger.info("Governance validations flow initiated.")
     try:
         validation = validate_data(data)

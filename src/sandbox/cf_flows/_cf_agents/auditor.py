@@ -1,4 +1,6 @@
 import controlflow as cf
+from pydantic import BaseModel
+
 
 auditor = cf.Agent(
     name="Auditor",
@@ -10,24 +12,28 @@ auditor = cf.Agent(
         """,
 )
 
+class AuditReport(BaseModel):
+    title: str
+    markdown: str
+
 @cf.flow
 def audit_and_report(data, flow_run_context):
 
     written_report = cf.Task(
         """
             Lets take the data and write a compliance report. I want the report to be a paragraph long and
-            include the details of the data and the flow run status. The context I'm giving you is output of a 
+            written in markdown, and include the details of the data and the flow run status. The context I'm giving you is output of a 
             prefect flow and data. 
         """,
         context=dict(
             data=data,
             flow_run=flow_run_context,
         ),
+        result_type=AuditReport,
         agents=[auditor],
     )
-    written_report.run()
 
-    return written_report
+    return written_report.run()
 
 if __name__ == "__main__":
     audit_and_report(data=None, flow_run_context=None)

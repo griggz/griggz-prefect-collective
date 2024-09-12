@@ -437,7 +437,7 @@ wheels = [
 
 [[package]]
 name = "controlflow"
-version = "0.8.2"
+version = "0.8.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jinja2" },
@@ -450,9 +450,9 @@ dependencies = [
     { name = "textual" },
     { name = "tiktoken" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c9/52/2252d21581d80e3652ff959b0550b5bfce9045939a7c6455411a3fba2ade/controlflow-0.8.2.tar.gz", hash = "sha256:69b4f10dad41fdeb8ad5468f2f34ceebb28af361d6c9873717cef33d4e5cd7f8", size = 1269156 }
+sdist = { url = "https://files.pythonhosted.org/packages/68/57/ebe1ee6ca033c91811abd5d74015388da14e1286c4facfb017369fc0a87e/controlflow-0.8.3.tar.gz", hash = "sha256:55e82bc949a370876c863c401274b2fc872386c5e6b8680c9cc82080f612da5c", size = 1269098 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6d/74/09390ce1032092cd31e357f29ed3587b41ffc41bda46fd2f9dbef63696a0/controlflow-0.8.2-py3-none-any.whl", hash = "sha256:7965f05553534a33e1c59917232dd2d13a0f0f2ffca76bc0506fefc99d57700d", size = 75944 },
+    { url = "https://files.pythonhosted.org/packages/6f/07/d688e37e3be5da4592f050a2882f2c692c8097fe17011f901d4ccf00b518/controlflow-0.8.3-py3-none-any.whl", hash = "sha256:636b5a485b18d6ae1283c69ceabcbf674668e113a2843294ad1112b68c94ce71", size = 75851 },
 ]
 
 [[package]]
@@ -762,14 +762,14 @@ wheels = [
 
 [[package]]
 name = "griffe"
-version = "0.47.0"
+version = "1.3.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f2/09/cf9eee11d51cc4d76808c4a6147dd8af21aba3760470a021b41f8841ffcf/griffe-0.47.0.tar.gz", hash = "sha256:95119a440a3c932b13293538bdbc405bee4c36428547553dc6b327e7e7d35e5a", size = 103477 }
+sdist = { url = "https://files.pythonhosted.org/packages/ae/d1/dcd486d6d577cb12490c78cfa88679fb9b481b227807f14632ba9bd82245/griffe-1.3.1.tar.gz", hash = "sha256:3f86a716b631a4c0f96a43cb75d05d3c85975003c20540426c0eba3b0581c56a", size = 382412 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/3a/d5/be4b0a032935c62d940b137d03a130a0728da7be1e125b7ee786e40ccb4d/griffe-0.47.0-py3-none-any.whl", hash = "sha256:07a2fd6a8c3d21d0bbb0decf701d62042ccc8a576645c7f8799fe1f10de2b2de", size = 122192 },
+    { url = "https://files.pythonhosted.org/packages/1b/19/63971981a20aecfa7cbd07c5cac6914cf1180b3dd8db5fe8ab2ea410315f/griffe-1.3.1-py3-none-any.whl", hash = "sha256:940aeb630bc3054b4369567f150b6365be6f11eef46b0ed8623aea96e6d17b19", size = 126902 },
 ]
 
 [[package]]
@@ -1708,7 +1708,7 @@ wheels = [
 
 [[package]]
 name = "prefect"
-version = "3.0.0rc15"
+version = "3.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiosqlite" },
@@ -1733,7 +1733,6 @@ dependencies = [
     { name = "httpcore" },
     { name = "httpx", extra = ["http2"] },
     { name = "humanize" },
-    { name = "importlib-resources" },
     { name = "jinja2" },
     { name = "jinja2-humanize-extension" },
     { name = "jsonpatch" },
@@ -1764,14 +1763,9 @@ dependencies = [
     { name = "uvicorn" },
     { name = "websockets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/1b/25/2628cc73ea842c0ff197c1ad5b13eaca071ca8502a0be89ee22347f0df6f/prefect-3.0.0rc15.tar.gz", hash = "sha256:1f9954bd4c649d328c88d021cb5867ae20c019f4d916e0ea0c12846495280b26", size = 5721549 }
+sdist = { url = "https://files.pythonhosted.org/packages/a6/df/24f1d612ad728d47c90ab230a032081ef6f4ea8a5d58748cc5d71afcc59a/prefect-3.0.1.tar.gz", hash = "sha256:745db70b35218cd9577cd352c27c58a5c6aaa46c7f0d8cb1b1fe18ad019eebc2", size = 5769272 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/43/0c/fa69261604d044a49667119df93d956dc0b602975718872bbaf45588de21/prefect-3.0.0rc15-py3-none-any.whl", hash = "sha256:e32dbfae2390d3d78e5449c1296f2ea54df04903ebfe9b98f2f897aed1e3e2e0", size = 5981994 },
-]
-
-[package.optional-dependencies]
-shell = [
-    { name = "prefect-shell" },
+    { url = "https://files.pythonhosted.org/packages/5b/03/81e7861b32a35db8e95009b722aa40f9fed6827815121cfd587b60a13179/prefect-3.0.1-py3-none-any.whl", hash = "sha256:210d9ef3d15dfa9c7b9aa6432112377d11ce3399dcda07d597f212b0ddf8f55b", size = 6039351 },
 ]
 
 [[package]]
@@ -1785,18 +1779,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/39/96/5613772ad6633a7296be19c78b6caea7aa3e48ce6f27b8094879774858c6/prefect_docker-0.5.1.tar.gz", hash = "sha256:4b8d51d724d69eabab1fc225dae552ce2315d6be30cd5a8be1b548aadf3b8580", size = 34545 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f3/4a/cf16564b974b58226354565847e60fb39744e966ca64634937467d01d6a6/prefect_docker-0.5.1-py3-none-any.whl", hash = "sha256:d7c71fa7b8b6b728b543573ce3f51c0d7a6c7d7577d230e03b5e232d236b590a", size = 24407 },
-]
-
-[[package]]
-name = "prefect-shell"
-version = "0.3.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "prefect" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/03/de/7895e16eb6be387ba09623cde071afd8e0fd94633ad3818a312b8fb060b6/prefect_shell-0.3.0.tar.gz", hash = "sha256:2a81d3194bf82ca6f7a7d988d90cf355d4ba0363a55f0f568326279f929be1e2", size = 18820 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/06/53/0d791929599332e06ebfd3922a0acac649ce85c149634c8f23cff15cc473/prefect_shell-0.3.0-py3-none-any.whl", hash = "sha256:cc5b85a9cfe8b19814688230b267de3f8aa22d7b406f7c1ad4ffd350044b46e3", size = 13360 },
 ]
 
 [[package]]
@@ -2397,7 +2379,6 @@ dependencies = [
     { name = "googlemaps-nb" },
     { name = "graphviz" },
     { name = "greenlet" },
-    { name = "griffe" },
     { name = "grpc-google-iam-v1" },
     { name = "grpcio" },
     { name = "grpcio-status" },
@@ -2451,7 +2432,7 @@ dependencies = [
     { name = "pip" },
     { name = "platformdirs" },
     { name = "portalocker" },
-    { name = "prefect", extra = ["shell"] },
+    { name = "prefect" },
     { name = "prefect-docker" },
     { name = "prometheus-client" },
     { name = "proto-plus" },
@@ -2549,7 +2530,7 @@ requires-dist = [
     { name = "click", specifier = "==8.1.7" },
     { name = "cloudpickle", specifier = "==3.0.0" },
     { name = "colorama", specifier = "==0.4.6" },
-    { name = "controlflow", specifier = "==0.8.2" },
+    { name = "controlflow", specifier = ">=0.8.3" },
     { name = "coolname", specifier = "==2.2.0" },
     { name = "croniter", specifier = "==3.0.3" },
     { name = "cryptography", specifier = "==43.0.0" },
@@ -2572,7 +2553,6 @@ requires-dist = [
     { name = "googlemaps-nb", specifier = "==2.5.1.dev0" },
     { name = "graphviz", specifier = "==0.20.3" },
     { name = "greenlet", specifier = "==3.0.3" },
-    { name = "griffe", specifier = "==0.47.0" },
     { name = "grpc-google-iam-v1", specifier = "==0.13.1" },
     { name = "grpcio", specifier = "==1.65.4" },
     { name = "grpcio-status", specifier = "==1.65.4" },
@@ -2626,7 +2606,7 @@ requires-dist = [
     { name = "pip", specifier = "==24.1" },
     { name = "platformdirs", specifier = "==4.2.2" },
     { name = "portalocker", specifier = "==2.10.1" },
-    { name = "prefect", extras = ["shell"], specifier = "==3.0.0rc15" },
+    { name = "prefect", specifier = "==3.0.1" },
     { name = "prefect-docker", specifier = ">=0.5.1" },
     { name = "prometheus-client", specifier = "==0.20.0" },
     { name = "proto-plus", specifier = "==1.24.0" },
