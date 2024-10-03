@@ -99,7 +99,7 @@ def how_far(cafe, park):
     return distance_miles
 
 
-@flow(log_prints=True, flow_run_name=name_flow)
+@flow
 def take_a_walk(city: str, near: str) -> List[str]:
     # Get the suggested cafe
     cafe = navigate_cafes([city])
