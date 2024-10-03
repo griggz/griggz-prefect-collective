@@ -124,6 +124,7 @@ if __name__ == "__main__":
     #     name="events-flow-demo",
     # )
     # Deploy the flow to Prefect Cloud
+<<<<<<< HEAD
     # flow.from_source(
     #     source="https://github.com/griggz/griggz-prefect-collective.git",
     #     entrypoint="src/sandbox/flows/_demo_events/flow.py:governance_flow",
@@ -131,3 +132,12 @@ if __name__ == "__main__":
     #     name="events-flow-demo",
     #     work_pool_name="managed-pool",
     # )
+=======
+    flow.from_source(
+        source="https://github.com/griggz/griggz-prefect-collective.git",
+        entrypoint="src/sandbox/flows/_demo_events/flows.py:governance_flow", 
+    ).deploy(
+        name="events-flow-demo",
+        work_pool_name="managed-pool",
+    )
+>>>>>>> 6490047 (updates to add new __init__.py)
