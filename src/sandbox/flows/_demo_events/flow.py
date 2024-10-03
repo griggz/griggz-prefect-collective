@@ -106,15 +106,15 @@ def governance_flow(data=[1, 2, 3]):
 # Example usage
 if __name__ == "__main__":
     data = [1, 2, 3]
-    # governance_flow(data)
+    governance_flow(data)
     # governance_flow.serve(
     #     name="events-flow-demo",
     # )
     # Deploy the flow to Prefect Cloud
-    flow.from_source(
-        source="https://github.com/griggz/griggz-prefect-collective.git",
-        entrypoint="src/sandbox/flows/_demo_events/flow.py:governance_flow",
-    ).deploy(
-        name="events-flow-demo",
-        work_pool_name="managed-pool",
-    )
+    # flow.from_source(
+    #     source="https://github.com/griggz/griggz-prefect-collective.git",
+    #     entrypoint="src/sandbox/flows/_demo_events/flow.py:governance_flow",
+    # ).deploy(
+    #     name="events-flow-demo",
+    #     work_pool_name="managed-pool",
+    # )
