@@ -127,15 +127,4 @@ def governance_flow_hook(data: Optional[dict] = None) -> None:
 
 # Example usage
 if __name__ == "__main__":
-    # governance_flow_hook()
-    governance_flow_hook.serve(
-        name="hook-flow-demo",
-    )
-    # Deploy the flow to Prefect Cloud
-    # flow.from_source(
-    #     source="https://github.com/griggz/griggz-prefect-collective.git",
-    #     entrypoint="src/sandbox/flows/_demo_events/flow.py:governance_flow",
-    # ).deploy(
-    #     name="events-flow-demo",
-    #     work_pool_name="managed-pool",
-    # )
+    governance_flow_hook()

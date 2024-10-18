@@ -1,7 +1,9 @@
 from typing import List
 import httpx
+from datetime import timedelta
 from prefect import task, flow
 from prefect.runtime import flow_run
+from prefect.cache_policies import TASK_SOURCE
 
 import math
 from sandbox.flows.suggest_cafe.flow import navigate_cafes
@@ -47,7 +49,7 @@ def haversine(lat1, lon1, lat2, lon2):
     return c * r
 
 
-@task(retries=1)
+@task(retries=1, cache_policy=TASK_SOURCE, cache_expiration=timedelta(minutes=2))
 def check_temperature(lat: float, lon: float):
     good_weather = False
     base_url = "https://api.open-meteo.com/v1/forecast/"
@@ -71,7 +73,7 @@ def check_temperature(lat: float, lon: float):
     return good_weather, temps
 
 
-@task(retries=1)
+@task(retries=1, cache_policy=TASK_SOURCE, cache_expiration=timedelta(minutes=2))
 def check_for_rain(lat: float, lon: float) -> bool:
     no_rain = False
     base_url = "https://api.open-meteo.com/v1/forecast/"
@@ -99,7 +101,7 @@ def how_far(cafe, park):
     return distance_miles
 
 
-@flow
+@flow(flow_run_name=name_flow, log_prints=True)
 def take_a_walk(city: str, near: str) -> List[str]:
     # Get the suggested cafe
     cafe = navigate_cafes([city])
@@ -130,5 +132,5 @@ def take_a_walk(city: str, near: str) -> List[str]:
 
 if __name__ == "__main__":
     results = take_a_walk(
-        "Lyon, France", "Place de Tapis"
+        "Alexandria, VA", "Shirlington"
     )
