@@ -131,6 +131,7 @@ def take_a_walk(city: str, near: str):
 
 
 if __name__ == "__main__":
+    
     results = take_a_walk(
         "Alexandria, VA", "Shirlington"
     )
