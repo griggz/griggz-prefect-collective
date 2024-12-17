@@ -12,7 +12,7 @@ if __name__ == "__main__":
         source="https://github.com/griggz/griggz-prefect-collective.git",
         entrypoint="src/sandbox/flows/_demo_scenario/flow.py:data_flow",
     ).deploy(
-        name="governance-events-flow",
+        name="data-dependency-flow",
         work_pool_name="managed-pool",
         job_variables={
             "pip_packages": ["prefect", "tabulate", "pydantic", "pandas"],

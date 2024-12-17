@@ -61,7 +61,7 @@ def log_artifact(markdown, title):
 
 
 # Main flow
-@flow(log_prints=True)
+@flow(log_prints=True, retries=1, retry_delay_seconds=5)
 def governance_flow(data=[1, 2, 3]):
     logger = get_run_logger()
     print("Hey! Lets get started!")
