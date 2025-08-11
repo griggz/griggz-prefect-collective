@@ -7,8 +7,6 @@ pull:
       id: clone
       repository: https://github.com/griggz/griggz-prefect-collective.git
       branch: main
-      # Pin to the commit that triggered the workflow
-      commit_sha: "{{ $GITHUB_SHA }}"
       # For private repos, reference a Prefect GitHubCredentials block
       # credentials: "{{ prefect.blocks.github-credentials.my-github-creds }}"
   - prefect.deployments.steps.pip_install_requirements:
