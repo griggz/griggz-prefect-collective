@@ -5,13 +5,20 @@ from pathlib import Path
 from enum import Enum
 from typing import Optional
 import os
-
+from prefect_dbt.cloud import DbtCloudCredentials
 from pathlib import Path
 
 
 class Branch(Enum):
     MAIN = "duckdb"
     FAIL = "model_error"
+
+
+DbtCloudCredentials(
+    api_key="API-KEY-PLACEHOLDER",
+    account_id="ACCOUNT-ID-PLACEHOLDER"
+).save("CREDENTIALS-BLOCK-NAME-PLACEHOLDER")
+
 
 
 @task(name="clone the repo")
@@ -62,6 +69,27 @@ def dbt_build_flow(
         summary_artifact_key="dbt-build-task-summary",
     )
 
+    
+
 
 if __name__ == "__main__":
     dbt_build_flow()
+
+
+
+
+from prefect import flow
+from prefect_dbt.cloud import DbtCloudJob
+from prefect_dbt.cloud.jobs import run_dbt_cloud_job
+import asyncio
+
+@flow
+async def run_dbt_job_flow():
+    result = await run_dbt_cloud_job(
+        dbt_cloud_job = await DbtCloudJob.load("JOB-BLOCK-NAME-PLACEHOLDER"),
+        targeted_retries = 0,
+    )
+    return await result
+
+if __name__ == "__main__":
+    asyncio.run(run_dbt_job_flow())

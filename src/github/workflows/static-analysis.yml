@@ -1,0 +1,28 @@
+name: Deploy Prefect (Process)
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Deploy using Prefect's official action
+      - name: Prefect deploy
+        uses: PrefectHQ/actions-prefect-deploy@v4
+        with:
+          # Deploy all entries in the prefect.yaml
+          all-deployments: "true"
+          # Ensure the deployment CLI can import your flow at deploy-time
+          requirements-file-paths: ./src/sandbox/requirements.txt
+          deployment-file-path: ./src/sandbox/flows/quick_start/prefect.yaml
+        env:
+          PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
+          PREFECT_API_URL: ${{ secrets.PREFECT_API_URL }}
+          
