@@ -17,7 +17,7 @@ pull:
       stream_output: true
 
 deployments:
-  - name: prod
+  - name: quickstart-flow
     entrypoint: src/sandbox/flows/quick_start/flow.py:repo_info
     work_pool:
       name: managed-pool
