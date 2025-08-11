@@ -6,6 +6,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: prefect-cloud
     steps:
       - uses: actions/checkout@v4
 
@@ -23,6 +24,6 @@ jobs:
           requirements-file-paths: ./src/sandbox/requirements.txt
           deployment-file-path: ./src/sandbox/flows/quick_start/prefect.yaml
         env:
-          PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
-          PREFECT_API_URL: ${{ secrets.PREFECT_API_URL }}
+          PREFECT_API_KEY: ${{ secrets.PREFECT_SECRET }}
+          PREFECT_API_URL: ${{ secrets.PREFECT_URL }}
           
