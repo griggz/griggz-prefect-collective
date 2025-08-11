@@ -1,0 +1,23 @@
+# prefect.yaml
+name: github-pull-no-docker
+prefect-version: "3.*"
+
+pull:
+  - prefect.deployments.steps.git_clone:
+      id: clone
+      repository: https://github.com/griggz/griggz-prefect-collective.git
+      branch: main
+      # Pin to the commit that triggered the workflow
+      commit_sha: "{{ $GITHUB_SHA }}"
+      # For private repos, reference a Prefect GitHubCredentials block
+      # credentials: "{{ prefect.blocks.github-credentials.my-github-creds }}"
+  - prefect.deployments.steps.pip_install_requirements:
+      directory: "{{ clone.directory }}"
+      requirements_file: src/sandbox/requirements.txt
+      stream_output: true
+
+deployments:
+  - name: prod
+    entrypoint: src/sandbox/flows/quick_start/flow.py:repo_info
+    work_pool:
+      name: managed-pool
